@@ -42,7 +42,7 @@
                 "name":"Senzor miscare",
                 "description":"O valoare pentru detectarea miscarii",
                 "token-type":"string", 
-                "byte-size":, 
+                "byte-size":4, 
                 "regex-rule": "[0-9]*", 
                 "optional": false
             }
@@ -57,7 +57,7 @@
                 "name":"Senzor de soc",
                 "description":"O valoarea a socului resimtit de usa",
                 "token-type":"string", 
-                "byte-size":, 
+                "byte-size":4, 
                 "regex-rule": "[0-9]*", 
                 "optional": false
             }
@@ -68,11 +68,19 @@
         "1":{
             "token-delimitators": "",
             "protocol": "HTTP",
-            "prefix": "curl -XPOST 'http://localhost:9080/sensor/get/RFID'",
+            "prefix":,
             "buffer-tokens":[
             {
-                "name":"RFID",
+                "name":"auth_personal.txt - RFID",
                 "description":"Deschiderea usii la detectarea codului RFID corect",
+                "token-type":"string", 
+                "byte-size":, 
+                "regex-rule": "[a-zA-Z0-9]*", 
+                "optional": false
+            },
+			{
+                "name":"auth_personal.txt - PIN",
+                "description":"Deschiderea usii la introducerea codului PIN corect",
                 "token-type":"string", 
                 "byte-size":, 
                 "regex-rule": "[a-zA-Z0-9]*", 
@@ -83,41 +91,19 @@
 		"2":{
             "token-delimitators": "",
             "protocol": "HTTP",
-            "prefix": "curl -XPOST 'http://localhost:9080/sensor/get/PIN'",
+            "prefix":,
             "buffer-tokens":[
             {
-                "name":"PIN",
-                "description":"Deschiderea usii la scrierea codului PIN corect",
+                "name":"movement_and_shock.txt - movement",
+                "description":"Aprinderea ledului la detectarea miscarii",
                 "token-type":"string", 
                 "byte-size":, 
                 "regex-rule": "[a-zA-Z0-9]*", 
                 "optional": false
-            }
-            ]
-        },
-		"3":{
-            "token-delimitators": "",
-            "protocol": "HTTP",
-            "prefix": "curl -XPOST 'http://localhost:9080/sensor/get/movement'",
-            "buffer-tokens":[
-            {
-                "name":"Senzor miscare",
-                "description":"Aprinde lumina la detectarea miscarii",
-                "token-type":"string", 
-                "byte-size":, 
-                "regex-rule": "[a-zA-Z0-9]*", 
-                "optional": false
-            }
-            ]
-        },
-		"4":{
-            "token-delimitators": "",
-            "protocol": "HTTP",
-            "prefix": "curl -XPOST 'http://localhost:9080/sensor/get/shock'",
-            "buffer-tokens":[
-            {
-                "name":"Senzor de soc",
-                "description":"Apriderea alarmei la detectarea unui soc puternic",
+            },
+			{
+                "name":"movement_and_shock.txt - shock",
+                "description":"Pornirea alarmei la detectarea unui soc puternic",
                 "token-type":"string", 
                 "byte-size":, 
                 "regex-rule": "[a-zA-Z0-9]*", 
