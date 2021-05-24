@@ -18,7 +18,7 @@
             }
             ]
         },
-		"2":{
+	"2":{
             "token-delimitators": "",
             "protocol": "HTTP",
             "prefix": "curl -XPOST 'http://localhost:9080/sensor/set/PIN'",
@@ -33,7 +33,7 @@
             }
             ]
         },
-		"3":{
+	"3":{
             "token-delimitators": "",
             "protocol": "HTTP",
             "prefix": "curl -XPOST 'http://localhost:9080/sensor/set/movement'",
@@ -48,7 +48,7 @@
             }
             ]
         },
-		"4":{
+	"4":{
             "token-delimitators": "",
             "protocol": "HTTP",
             "prefix": "curl -XPOST 'http://localhost:9080/sensor/set/shock'",
